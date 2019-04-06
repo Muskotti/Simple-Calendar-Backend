@@ -3,7 +3,7 @@ package fi.tuni.tiko.SimpleCalendarBackend;
 import javax.persistence.*;
 
 @Entity
-@Table(name="events")
+@Table(name="simple_events")
 public class SimpleEvent {
 
     @Id
