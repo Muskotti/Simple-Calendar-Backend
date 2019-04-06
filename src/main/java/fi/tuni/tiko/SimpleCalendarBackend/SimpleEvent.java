@@ -1,26 +1,30 @@
 package fi.tuni.tiko.SimpleCalendarBackend;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
+@Table(name="events")
 public class SimpleEvent {
 
-    private int eventId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String eventName;
+
     private String eventText;
 
-    public SimpleEvent(int eventId, String eventName, String eventText) {
-        this.eventId = eventId;
+    public SimpleEvent( String eventName, String eventText) {
         this.eventName = eventName;
         this.eventText = eventText;
     }
 
-    public int getEventId() {
-        return eventId;
+    public Long getEventId() {
+        return id;
     }
 
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
+    public void setEventId(Long eventId) {
+        this.id = eventId;
     }
 
     public String getMakerName() {
@@ -42,7 +46,7 @@ public class SimpleEvent {
     @Override
     public String toString() {
         return "eventItem{" +
-                "eventId=" + eventId +
+                "eventId=" + id +
                 ", eventName='" + eventName + '\'' +
                 ", eventText='" + eventText + '\'' +
                 '}';
