@@ -1,5 +1,8 @@
 package fi.tuni.tiko.SimpleCalendarBackend;
 
+import javax.persistence.Entity;
+
+@Entity
 public class SimpleEvent {
 
     private int eventId;
