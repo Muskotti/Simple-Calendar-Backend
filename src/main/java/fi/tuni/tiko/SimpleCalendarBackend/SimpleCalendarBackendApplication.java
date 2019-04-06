@@ -17,7 +17,7 @@ public class SimpleCalendarBackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        SimpleEvent event = new SimpleEvent(0,"asd","asd");
+        SimpleEvent event = new SimpleEvent("asd","asd");
         eventRepository.save(event);
     }
 }
