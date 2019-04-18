@@ -14,6 +14,8 @@ public class SimpleEvent {
 
     private String eventText;
 
+    public SimpleEvent(){}
+
     public SimpleEvent( String eventName, String eventText) {
         this.eventName = eventName;
         this.eventText = eventText;
