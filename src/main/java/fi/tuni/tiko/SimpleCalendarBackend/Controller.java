@@ -19,12 +19,6 @@ public class Controller {
     @Autowired
     EventRepository eventRepository;
 
-
-    @RequestMapping("/")
-    String index() {
-        return "index";
-    }
-
     @GetMapping("/db")
     public Iterable<SimpleEvent> getEvents() {
         return eventRepository.findAll();
