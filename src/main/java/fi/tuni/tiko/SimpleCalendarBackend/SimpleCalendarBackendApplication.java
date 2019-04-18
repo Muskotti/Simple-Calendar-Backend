@@ -6,7 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.transaction.Transactional;
-import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 @SpringBootApplication
 public class SimpleCalendarBackendApplication implements CommandLineRunner {
@@ -22,7 +24,10 @@ public class SimpleCalendarBackendApplication implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        SimpleEvent event1 = new SimpleEvent("Event1", "Event1 text","18-04-2019");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Calendar cal = Calendar.getInstance();
+        String newDate = dateFormat.format(cal.getTime());
+        SimpleEvent event1 = new SimpleEvent("Event1", "Event1 text",newDate);
         events.save(event1);
     }
 }
