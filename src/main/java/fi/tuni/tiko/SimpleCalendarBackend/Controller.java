@@ -18,6 +18,6 @@ public class Controller {
 
     @GetMapping("/db/{date}")
     public Iterable<SimpleEvent> getEvents(@PathVariable String date) {
-        return eventRepository.findAll();
+        return eventRepository.findAllByDate(date);
     }
 }
