@@ -24,7 +24,7 @@ public class SimpleCalendarBackendApplication implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar cal = Calendar.getInstance();
         String newDate = dateFormat.format(cal.getTime());
         SimpleEvent event1 = new SimpleEvent("Event1", "Event1 text",newDate);
