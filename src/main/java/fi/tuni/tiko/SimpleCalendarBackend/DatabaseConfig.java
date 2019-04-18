@@ -13,10 +13,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
 
-@Configuration
+//@Configuration
 @ComponentScan(basePackages = "fi.tuni.tiko")
 public class DatabaseConfig {
 
+    /*
     @Value("${spring.datasource.url}")
     private String dbUrl;
 
@@ -30,4 +31,5 @@ public class DatabaseConfig {
             return new HikariDataSource(config);
         }
     }
+    */
 }
