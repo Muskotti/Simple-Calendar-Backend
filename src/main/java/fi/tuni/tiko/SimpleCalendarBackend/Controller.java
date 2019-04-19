@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class Controller {
@@ -19,5 +20,12 @@ public class Controller {
     @GetMapping("/db/{date}")
     public Iterable<SimpleEvent> getEvents(@PathVariable String date) {
         return eventRepository.findAllByDate(date);
+    }
+
+    @RequestMapping(value="/db/addEvent", method= RequestMethod.POST)
+    @ResponseBody
+    public Optional<SimpleEvent> addEvent(@RequestBody SimpleEvent se) {
+        eventRepository.save(se);
+        return Optional.of(se);
     }
 }
