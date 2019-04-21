@@ -25,7 +25,10 @@ public class Controller {
     @RequestMapping(value="/db/addEvent", method= RequestMethod.POST)
     @ResponseBody
     public Optional<SimpleEvent> addEvent(@RequestBody SimpleEvent se) {
-        eventRepository.save(se);
+        if(se.getMakerName() != null && !se.getMakerName().isEmpty()
+                && se.getEventText() != null && !se.getEventText().isEmpty()) {
+            eventRepository.save(se);
+        }
         return Optional.of(se);
     }
 }
